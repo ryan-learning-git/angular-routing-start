@@ -18,4 +18,9 @@ export class HomeComponent implements OnInit {
     this.router.navigate(['/servers']);
   }
 
+  loadServer(id: number){
+    // complex calculation etc
+    this.router.navigate(['/servers', id, 'edit'], {queryParams: {allowEdit: 1}, fragment: 'loading'});
+  }
+
 }
