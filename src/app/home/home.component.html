@@ -4,3 +4,7 @@
 <button class="btn btn-primary" (click)="loadServers()">Load Servers</button>
 <button class="btn btn-primary" (click)="loadServer(1)">Load Server 1</button>
 
+<button class="btn btn-default" (click)="login()">Log In</button>
+<button class="btn btn-warning" (click)="logout()">Log Out</button>
+
+<p *ngIf="amILoggedIn">You are logged in.</p>

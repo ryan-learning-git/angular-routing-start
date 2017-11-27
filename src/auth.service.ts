@@ -1,7 +1,12 @@
+import {EventEmitter} from '@angular/core';
+
 export class AuthService {
   // in the real world this might fetch our state from a server etc
 
   loggedIn = false;
+
+  loggedInEmitter = new EventEmitter<boolean>();
+
 
   isAuthenticated(){
     const promise = new Promise(
@@ -14,12 +19,16 @@ export class AuthService {
     return promise;
   }
 
-  login(){
+  login() {
+    console.log('User logged in.');
     this.loggedIn = true;
+    this.loggedInEmitter.emit();
   }
 
-  logout(){
+  logout() {
+    console.log('User logged out.');
     this.loggedIn = false;
+    this.loggedInEmitter.emit();
   }
 
 }

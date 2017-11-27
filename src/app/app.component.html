@@ -11,6 +11,8 @@
         </li>
         <li role="presentation" routerLinkActive="active"><a routerLink="/servers">Servers</a></li>
         <li role="presentation" routerLinkActive="active"><a [routerLink]="['/users']">Users</a></li>
+        <li role="presentation" class="pull-right" *ngIf="amILoggedIn" title="Click To Log Out"><a style="cursor: pointer" (click)="logout()">Logged in</a></li>
+        <li role="presentation" class="pull-right" *ngIf="!amILoggedIn" title="Click To Log In"><a style="cursor: pointer" (click)="login()">Logged Out</a></li>
       </ul>
     </div>
   </div>
